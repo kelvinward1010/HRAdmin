@@ -1,0 +1,27 @@
+{
+  "name": "hradmin",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"bun run --cwd backend start:dev\" \"bun run --cwd frontend dev\"",
+    "dev:backend": "bun run --cwd backend start:dev",
+    "dev:frontend": "bun run --cwd frontend dev",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "concurrently": "^9.2.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "lint-staged": {
+    "frontend/**/*.{ts,tsx,js,jsx}": "eslint --fix",
+    "backend/**/*.ts": "eslint --fix"
+  }
+}
